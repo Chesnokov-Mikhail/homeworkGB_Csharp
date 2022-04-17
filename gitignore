@@ -338,3 +338,13 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Visual Studio Code /add Chesnokov M.A./
+*.dll
+*.exe
+*.json
+*.pdb
+*.cache
+*.props
+*.targets
+*.csproj
