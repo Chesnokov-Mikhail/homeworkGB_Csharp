@@ -349,4 +349,3 @@ healthchecksdb
 *.cache
 *.props
 *.targets
-*.csproj
