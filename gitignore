@@ -341,8 +341,8 @@ healthchecksdb
 
 # Visual Studio Code /add Chesnokov M.A./
 *.dll
-./*/obj/Debug/net6.0/*.dll
-./*/bin/Debug/net6.0/*.pdb
+./*/obj/Debug
+./*/bin/Debug
 *.exe
 *.json
 *.pdb
