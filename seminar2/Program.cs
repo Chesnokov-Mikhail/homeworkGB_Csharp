@@ -16,20 +16,8 @@ SecondDigitThreeNumber(number);
 */
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
-// Вариант 1. Без конвертирования в число, т.к. ввод все равно ввиде строки, или целое число конвертировать в строку
 /*
-Console.Clear();
-
-Console.WriteLine("Введите трёхзначное число:");
-string strNumber = Console.ReadLine();
-// метод int.TryParse нашел на https://docs.microsoft.com/ru-ru/dotnet/api/system.char.isnumber?view=net-6.0#system-char-isnumber(system-char)
-if(strNumber.Length >= 3 && int.TryParse(strNumber, out int number))
-    Console.WriteLine(strNumber + " -> " + strNumber[2]);
-else
-    Console.WriteLine("Введённое не число или не трёхзначное число!");
-*/
-/*
-// Вариант 2. Работаем с числом
+// Вариант 1. Работаем с числом
 Console.Clear();
 
 int ThreeDigitNumber(int num)
@@ -66,3 +54,35 @@ else
     Console.WriteLine(number + " -> " + three);
 }
 */
+// Вариант 2. Без конвертирования в число, т.к. ввод все равно ввиде строки, или целое число конвертировать в строку
+/*
+Console.Clear();
+
+Console.WriteLine("Введите трёхзначное число:");
+string strNumber = Console.ReadLine();
+// метод int.TryParse нашел на https://docs.microsoft.com/ru-ru/dotnet/api/system.char.isnumber?view=net-6.0#system-char-isnumber(system-char)
+if(strNumber.Length >= 3 && int.TryParse(strNumber, out int number))
+    Console.WriteLine(strNumber + " -> " + strNumber[2]);
+else
+    Console.WriteLine("Введённое не число или не трёхзначное число!");
+*/
+
+// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+// Стандарт ISO 8601	Понедельник = 1, Вторник = 2, Среда = 3, Четверг = 4, Пятница = 5, Суббота = 6,	Воскресенье = 7
+// За выходные дни недели принимаем дни недели = 6 или 7.
+Console.Clear();
+
+string WeekendDayWeek(int num)
+{
+    if(num < 6)
+        return "рабочий день";
+    else
+        return "выходной день";
+}
+
+Console.WriteLine("Введите день недели от 1 до 7:");
+int numDay = Convert.ToInt32(Console.ReadLine());
+if(numDay < 1 || numDay >7)
+    Console.WriteLine(numDay + " не может быть днем недели");
+else
+    Console.WriteLine(numDay + " -> " + WeekendDayWeek(numDay));
