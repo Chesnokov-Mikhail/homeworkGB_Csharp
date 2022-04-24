@@ -34,7 +34,7 @@ for(int i =0; i < countArray; i++)
 }
 Console.WriteLine("{0} -> {1}", PrintArrayInt(numbersArray), NumberEvenNumbers(numbersArray));
 */
-
+/*
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
 Console.Clear();
@@ -75,3 +75,50 @@ int countArray = Convert.ToInt32(Console.ReadLine());
 int[] numbersArray = new int[countArray];
 numbersArray = GenerateNumArray(numbersArray,100);
 Console.WriteLine("{0} -> {1}", PrintArrayInt(numbersArray), SummEvenIndex(numbersArray));
+*/
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+Console.Clear();
+
+string PrintArrayDouble(double[] arr)
+{
+    string res = "[";
+    for(int i = 0; i < (arr.Length - 1); i++)
+    {
+        res += Convert.ToString(arr[i]) + " ";
+    }
+    res += Convert.ToString(arr[arr.Length - 1]);
+    res += "]";
+    return res;
+}
+
+double DiffMaxMinNumberArray(double[] array)
+{
+    double max = array[0];
+    double min = array[0];
+    for(int i = 1; i < array.Length; i++)
+    {
+        if(array[i] < min)
+            min = array[i];
+        else if(array[i] > max)
+            max = array[i];
+    }
+    return (max - min);
+}
+
+double[] GenerateNumArray(double[] array, int range)
+{
+    Random random = new Random();
+    for(int i =0; i < array.Length; i++)
+    {
+        array[i] = random.NextDouble() * range;
+    }
+    return array;
+}
+
+Console.WriteLine("Введите размер массива для заполнения случайными числами:");
+int countArray = Convert.ToInt32(Console.ReadLine());
+double[] numbersArray = new double[countArray];
+numbersArray = GenerateNumArray(numbersArray,100);
+Console.WriteLine("{0} -> {1}", PrintArrayDouble(numbersArray), DiffMaxMinNumberArray(numbersArray));
